@@ -32,6 +32,14 @@ const StyledDiv = styled.div`
     padding-left: 50px;
 `
 
+const StyledCursorDiv = styled.div`
+    display: flex;
+
+    #arrow {
+        padding-right: 4%;
+    }
+`
+
 
 
 class Landing extends Component {
@@ -44,28 +52,31 @@ class Landing extends Component {
                     <p>Hi, my name is</p>
 
                     <StyledTyping>
-                        <ReactTypingEffect
-                            text={["Prathik Murthy"]}
-                            speed={100}
-                            typingDelay={1000}
-                            erasingDelay={2000}
-                            cursorRenderer={cursor => <h1>{cursor}</h1>}
-                            displayTextRenderer={(text, i) => {
-                                return (
-                                    <h1>
-                                    {text.split('').map((char, i) => {
-                                        const key = `${i}`;
-                                        return (
-                                        <span
-                                            key={key}
-                                            // style={i%2 === 0 ? { color: 'magenta'} : {}}
-                                        >{char}</span>
-                                        );
-                                    })}
-                                    </h1>
-                                );
-                            }}        
-                        />
+                        <StyledCursorDiv>
+                            <h1 id="arrow">{ ' > ' }</h1>
+                            <ReactTypingEffect
+                                text={["Prathik Murthy"]}
+                                speed={100}
+                                typingDelay={1000}
+                                erasingDelay={2000}
+                                cursorRenderer={cursor => <h1>{cursor}</h1>}
+                                displayTextRenderer={(text, i) => {
+                                    return (
+                                        <h1>
+                                        {text.split('').map((char, i) => {
+                                            const key = `${i}`;
+                                            return (
+                                            <span
+                                                key={key}
+                                                // style={i%2 === 0 ? { color: 'magenta'} : {}}
+                                            >{char}</span>
+                                            );
+                                        })}
+                                        </h1>
+                                    );
+                                }}        
+                            />
+                        </StyledCursorDiv>    
                     </StyledTyping>
 
                 </StyledText>
