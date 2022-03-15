@@ -3,17 +3,21 @@ import styled from 'styled-components';
 
 const StyledText = styled.div`
     h1 {
-        color: blue;
+        color: var(--lightest-slate);
         text-align: center;
     }
+`
+
+const StyledDiv = styled.div`
+
 `
 
 class About extends Component {
     render() {
         return (
-            <StyledText>
-                <h1>Hello World</h1>
-            </StyledText>
+            <StyledDiv>
+
+            </StyledDiv>
         );
     }
 }
