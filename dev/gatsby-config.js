@@ -3,5 +3,5 @@ module.exports = {
       title: ``,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-styled-components"]
+  plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-styled-components", "react-typing-effect"]
 };
