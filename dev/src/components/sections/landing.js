@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactTypingEffect from 'react-typing-effect';
+import TextBoxWithDropShadow from '../TextDropShadow'
 
 
 const StyledText = styled.div`
@@ -9,6 +10,7 @@ const StyledText = styled.div`
         // text-align: center;
         font-family: monospace;
         font-size: 20px;
+        font-weight: bold;
     }
 
     h1 {
@@ -30,17 +32,23 @@ const StyledDiv = styled.div`
     padding-left: 50px;
 `
 
+
+
 class Landing extends Component {
     render() {
         return (
             <StyledDiv>
+
                 <StyledText>
+
                     <p>Hi, my name is</p>
+
                     <StyledTyping>
                         <ReactTypingEffect
                             text={["Prathik Murthy"]}
                             speed={100}
                             typingDelay={1000}
+                            erasingDelay={2000}
                             cursorRenderer={cursor => <h1>{cursor}</h1>}
                             displayTextRenderer={(text, i) => {
                                 return (
@@ -59,7 +67,10 @@ class Landing extends Component {
                             }}        
                         />
                     </StyledTyping>
+
                 </StyledText>
+
+                <TextBoxWithDropShadow bgcolor="var(--light-navy)"/>
                 
             </StyledDiv>
         );
