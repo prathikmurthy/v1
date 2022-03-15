@@ -91,7 +91,6 @@ class Landing extends Component {
                     bxsize = '10px'
                     fontsize = '20px'
                 />
-                
             </StyledDiv>
         );
     }

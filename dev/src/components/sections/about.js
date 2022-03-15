@@ -9,7 +9,7 @@ const StyledText = styled.div`
 `
 
 const StyledDiv = styled.div`
-
+    margin: 500px;
 `
 
 class About extends Component {
