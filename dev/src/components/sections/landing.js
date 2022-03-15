@@ -81,7 +81,16 @@ class Landing extends Component {
 
                 </StyledText>
 
-                <TextBoxWithDropShadow bgcolor="var(--light-navy)"/>
+                <TextBoxWithDropShadow 
+                    bgcolor= 'var(--light-navy)'
+                    text = "I'm a student at the University of Michigan studying Computer Science. I specialize in front-end development, and am currently developing systems for managing product data at Steelcase."
+                    width = '40%' 
+                    lm = '50%'
+                    bm = '10%'
+                    bxcol = 'var(--navy-shadow)'
+                    bxsize = '10px'
+                    fontsize = '20px'
+                />
                 
             </StyledDiv>
         );

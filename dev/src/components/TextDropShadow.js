@@ -5,32 +5,33 @@ import styled from 'styled-components';
 Component: Text Box with an Animated Drop Shadow
 
 REQUIRED PROPS:
-mp: left margin, NO DEFAULT GIVEN
+lm: left margin, NO DEFAULT GIVEN
 width: text box width, NO DEFAULT GIVEN
+text: text, NO DEFAULT GIVEN
 
 OPTIONAL PROPS:
 bgcolor: background color of text box, default var(--lightest-navy)
 bm: bottom margin, default 10%
 bxcol: box shadow color, default black
 bxsize: box shadow size, default 10px;
-font-size: font size, default 20px;
+fontsize: font size, default 20px;
 */
 
 const StyledDiv = styled.div`
     @keyframes BoxShadowSlide {
         0% {
-            box-shadow: 1px 1px var(--navy-shadow);
+            box-shadow: 1px 1px ${props => props.bxcol ? props.bxcol : 'var(--navy-shadow)'};
         }
         100% {
-            box-shadow: 10px 10px var(--navy-shadow);
+            box-shadow: ${props => props.bxsize ? props.bxsize : '10px'} ${props => props.bxsize ? props.bxsize : '10px'} ${props => props.bxcol ? props.bxcol : 'var(--navy-shadow)'};
         }
     }
 
-    margin-left: 50%;
+    margin-left: ${props => props.lm};
     margin-right: 0px;
-    margin-bottom: 10%;
+    margin-bottom: ${props => props.bm ? props.bm : '10%'};
     background-color: ${props => props.bgcolor ? props.bgcolor : "var(--light-navy)"};
-    width: 40%;
+    width: ${props => props.width};
     height: fit-content;
     animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 1s 1 BoxShadowSlide;
     animation-fill-mode: forwards;
@@ -41,7 +42,7 @@ const StyledDiv = styled.div`
         margin: 0px;
         color: var(--white);
         font-family: Cairo;
-        font-size: 20px;
+        font-size: ${props => props.fontsize ? props.fontsize : '20px'}
     }
 
 
@@ -50,8 +51,15 @@ const StyledDiv = styled.div`
 class TextBoxWithDropShadow extends Component {
     render() {
         return (
-            <StyledDiv bgcolor={this.props.bgcolor}>
-                <p>I'm a student at the University of Michigan studying Computer Science. I specialize in front-end development, and am currently developing systems for managing product data at Steelcase.</p>
+            <StyledDiv 
+                bgcolor={this.props.bgcolor}
+                fontsize={this.props.fontsize}
+                width={this.props.width}
+                bxsize = {this.props.bxsize}
+                bxcol={this.props.bxcol}
+                lm = {this.props.lm}
+                bm = {this.props.bm}>
+                <p>{this.props.text}</p>
             </StyledDiv>
         )
     }
