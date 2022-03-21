@@ -1,35 +1,74 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ReactTypingEffect from 'react-typing-effect';
-import TextBoxWithDropShadow from '../TextDropShadow'
 
+const StyledContainer = styled.div`
 
-const StyledText = styled.div`
-    p {
-        color: var(--text-gray-light);
-        // text-align: center;
-        font-family: monospace;
-        font-size: 20px;
-        font-weight: bold;
+    
+
+    a {
+        text-decoration: none;
+        color: white;
     }
 
-    h1 {
-        color: var(--text-gray);
+    a:hover {
+        color: var(--accent);
+    }
+
+    section {
+        padding-left: 10%;
+        
+
+        #one {
+            padding-top: 5%;
+
+            animation:1s ease 0s normal forwards 1 fadein;
+            opacity:0;
+        }
+    
+        #two {
+            padding-top: 5%;
+            animation:1s ease 1s normal forwards 1 fadein;
+            opacity:0;
+        }
+    
+        #three {
+            padding-top: 5%;
+            animation:1s ease 2s normal forwards 1 fadein;
+            opacity:0;
+        }
+
+        @media (max-width: 768px) {
+            max-width: 75%;
+            p {
+                font-size: 25px;
+            }
+        }
+        
+        @media (min-width: 767px) {
+            max-width: 42%;
+            p {
+                font-size: calc(2vw);
+            }
+        }
+    }
+
+    #four {
         text-align: center;
-        font-family: monospace;
-        font-size: 100px;
-    }
-`
+        font-size: 50px;
+        padding-top: 5%;
+        animation:1s ease 4s normal forwards 1 fadein;
+        opacity:0;
 
-const StyledTyping = styled.div`
-    h1 {
-        margin-top: 0px;
     }
-`
 
-const StyledDiv = styled.div`
-    padding-top: 100px;
-    padding-left: 50px;
+    @keyframes fadein{from{opacity:0}
+    to{opacity:1}
+    }
+
+
+
+
+
 `
 
 
@@ -37,42 +76,24 @@ const StyledDiv = styled.div`
 class Landing extends Component {
     render() {
         return (
-            <StyledDiv>
-
-                <StyledText>
-
-                    <p>Hi, my name is</p>
-
-                    <StyledTyping>
-                        <ReactTypingEffect
-                            text={["Prathik Murthy"]}
-                            speed={100}
-                            typingDelay={1000}
-                            erasingDelay={2000}
-                            cursorRenderer={cursor => <h1>{cursor}</h1>}
-                            displayTextRenderer={(text, i) => {
-                                return (
-                                    <h1>
-                                    {text.split('').map((char, i) => {
-                                        const key = `${i}`;
-                                        return (
-                                        <span
-                                            key={key}
-                                            // style={i%2 === 0 ? { color: 'magenta'} : {}}
-                                        >{char}</span>
-                                        );
-                                    })}
-                                    </h1>
-                                );
-                            }}        
-                        />
-                    </StyledTyping>
-
-                </StyledText>
-
-                <TextBoxWithDropShadow bgcolor="var(--light-navy)"/>
-                
-            </StyledDiv>
+            <StyledContainer>
+                <section>
+                    <div id="one">
+                        <p>Hi, I'm Prathik! 👋</p>
+                    </div>
+                    <div id="two">
+                        <p>I'm a Computer Science student at the University of Michigan 〽️ with a passion for software development and design.
+                            I'm currently working at Steelcase on technologies to streamline storage and input of product data.</p>
+                    </div>
+                    <div id="three">
+                        <p>You can check out some of my projects and experiences below, or on 
+                            my <a href='https://github.com/prathikmurthy' target='_blank'>Github 🖥️</a> or <a href='https://www.linkedin.com/in/prathikmurthy/' target='_blank'>LinkedIn 💼</a></p>
+                    </div>
+                </section>
+                <div id="four">
+                ⬇
+                </div>
+            </StyledContainer>
         );
     }
 }
