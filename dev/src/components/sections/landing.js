@@ -7,7 +7,7 @@ const StyledContainer = styled.div`
 
     a {
         text-decoration: none;
-        color: white;
+        color: var(--accent);
     }
 
     a:hover {
@@ -16,11 +16,11 @@ const StyledContainer = styled.div`
 
     section {
         
-        padding-left: 10%;
+        padding-left: 15%;
         
 
         #one {
-            padding-top: 10%;
+            padding-top: 13%;
 
             animation:1s ease 0s normal forwards 1 fadein;
             opacity:0;
@@ -52,9 +52,9 @@ const StyledContainer = styled.div`
         }
         
         @media (min-width: 767px) {
-            max-width: 42%;
+            max-width: 37%;
             p {
-                font-size: calc(1.5vw);
+                font-size: calc(1.75vw);
             }
         }
     }
@@ -72,13 +72,7 @@ const StyledContainer = styled.div`
     to{opacity:1}
     }
 
-
-
-
-
 `
-
-
 
 class Landing extends Component {
     render() {
@@ -89,19 +83,19 @@ class Landing extends Component {
                         <p>Hi, I'm Prathik! 👋</p>
                     </div>
                     <div id="two">
-                        <p>I'm a Computer Science student at the University of Michigan 〽️ with a passion for software development and design.</p>
+                        <p>I'm a Computer Science major at the <a href="https://umich.edu/" target="_blank">University of Michigan 〽️</a> with a passion for software development and engineering.</p>
                     </div>
                     <div id="three">
                         <p>I'm currently working at <a href="https://www.steelcase.com/" target="_blank">Steelcase 🛋️</a> on technologies to streamline storage and input of product data.</p>
                     </div>
                     <div id="four">
-                        <p>You can check out some of my projects and experiences below, or on 
-                            my <a href='https://github.com/prathikmurthy' target='_blank'>Github 🖥️</a> or <a href='https://www.linkedin.com/in/prathikmurthy/' target='_blank'>LinkedIn 💼</a></p>
+                        <p>You can check out some of my work below, or on 
+                            my <a href='https://github.com/prathikmurthy' target='_blank'>Github 🖥️</a> and <a href='https://www.linkedin.com/in/prathikmurthy/' target='_blank'>LinkedIn 💼</a></p>
                     </div>
                 </section>
-                <div id="five">
+                {/* <div id="five">
                 ⬇
-                </div>
+                </div> */}
             </StyledContainer>
         );
     }
