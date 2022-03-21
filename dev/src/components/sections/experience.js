@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
     padding-left: 20%;
 
     #title {
-        padding-right: 20%;
+        padding-right: 18%;
         p {
             font-size: 20px;
             color: var(--accentblue);
@@ -36,7 +36,16 @@ const StyledDiv = styled.div`
 `
 
 const StyledWorkItem = styled.div`
-    
+
+    a {
+        text-decoration: none;
+        color: var(--accentblue);
+    }
+
+    a:hover {
+        color: var(--accent);
+    }
+        
     #upper {
         display: flex;
         justify-content: space-between;
@@ -95,8 +104,7 @@ const StyledSkill = styled.div`
         text-align: center;
 
         @media (max-width: 768px) {
-            font-size: 10px;
-            border: 1px solid gray;
+            font-size: 12px;
         }
     }
 
@@ -111,11 +119,11 @@ const Skill = ({skill}) => {
     )
 }
 
-const Workitem = ({ name, daterange, skills, role }) => {
+const Workitem = ({ name, daterange, skills, role, link }) => {
     return (
         <StyledWorkItem>
             <div id="upper">
-                <p id="name">{name}</p>
+                <p id="name"><a href={link}>{name}</a></p>
                 <p id="date">{daterange}</p>
             </div>
             <div id="role">{role}</div>
@@ -131,11 +139,11 @@ const Workitem = ({ name, daterange, skills, role }) => {
     )
 }
 
-const WorkitemNoPoints = ({ name, daterange, role }) => {
+const WorkitemNoPoints = ({ name, daterange, role, link }) => {
     return (
         <StyledWorkItem>
             <div id="upper">
-                <p id="name">{name}</p>
+                <p id="name"><a href={link}>{name}</a></p>
                 <p id="date">{daterange}</p>
             </div>
             <div id="role">{role}</div>
@@ -154,17 +162,20 @@ export default class Experience extends Component {
                 <div id="list">
                     <WorkitemNoPoints
                         name = "Steelcase"
+                        link = "https://steelcase.com"
                         role = "Web Development and Innovation Intern"
                         daterange = "2022 - Present"
                     />
                     <Workitem
                         name = "Michigan State University"
+                        link = "https://msu.edu"
                         role = "Teaching Assistant - CSE 232"
                         daterange = "2021"
                         skills = {["C++", "Python", "Excel"]}
                     />
                     <Workitem
                         name = "Steelcase"
+                        link = "https://steelcase.com"
                         role = "Product Data Technology Intern"
                         daterange = "2021"
                         skills = {["Python", "ABAP", "SAP"]}
