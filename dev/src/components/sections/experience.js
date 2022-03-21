@@ -104,8 +104,7 @@ const StyledSkill = styled.div`
         text-align: center;
 
         @media (max-width: 768px) {
-            font-size: 10px;
-            border: 1px solid gray;
+            font-size: 12px;
         }
     }
 
