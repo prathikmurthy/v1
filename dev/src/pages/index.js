@@ -5,6 +5,7 @@ import NavBar from "../components/sections/navbar"
 import styled from 'styled-components'
 import '../Index.css';
 import '../resources/Inter Web/inter.css'
+import Footer from "../components/sections/footer";
 
 const StyledContainer = styled.div`
 
@@ -20,6 +21,7 @@ const IndexPage = () => {
       <Experience />
       <Featured />
       <Contact /> */}
+      <Footer />
     </StyledContainer>
   )
 }
