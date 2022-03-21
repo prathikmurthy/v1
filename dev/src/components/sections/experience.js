@@ -71,6 +71,10 @@ const StyledWorkItem = styled.div`
         margin: 0;
         border: 0;
         font-size: 16px;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
     }
 
     #lower {
