@@ -24,7 +24,9 @@
 
     --white: #FFFFFF;
     --darkbackground : #111827;
-    --accent: #2A397C;
+    --accent: #ffff66;
+    --accentblue: #04d9ff;
+
 }
 
 body {
