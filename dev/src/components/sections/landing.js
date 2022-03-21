@@ -45,7 +45,7 @@ const StyledContainer = styled.div`
         }
         
         @media (min-width: 767px) {
-            max-width: 42%;
+            max-width: 42   %;
             p {
                 font-size: calc(2vw);
             }
