@@ -16,12 +16,12 @@ const IndexPage = () => {
   return (
     <StyledContainer>
       <Landing />
-      <About />
-      {/* <Skills />
       <Experience />
       <Featured />
-      <Contact /> */}
       <Footer />
+      {/* <About /> */}
+      {/* <Skills />
+      <Contact /> */}
     </StyledContainer>
   )
 }
