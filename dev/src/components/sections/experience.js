@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
     padding-left: 20%;
 
     #title {
-        padding-right: 20%;
+        padding-right: 18%;
         p {
             font-size: 20px;
             color: var(--accentblue);
