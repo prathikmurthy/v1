@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-
 const StyledDiv = styled.div`
-    display: flex;
-    justify-content: center;
+    section {
+        display: flex;
+        justify-content: center;
 
-    padding: 5%;
-    padding-right: 10%;
-    padding-left: 20%;
+        padding: 5%;
+        padding-right: 10%;
+        padding-left: 20%;
+    }
 
     #title {
         padding-right: 18%;
+
+        border-right: 2px dashed var(--accent);
         p {
             font-size: 20px;
             color: var(--accentblue);
@@ -98,9 +101,10 @@ const StyledWorkItem = styled.div`
 `
 
 const StyledSkill = styled.div`
-    border: 2px dotted gray;
+    border: 2px dashed var(--accent);
     padding: 0;
     margin: 1%;
+    color: var(--accent);
     
     p {
         padding: 0;
@@ -112,6 +116,54 @@ const StyledSkill = styled.div`
         }
     }
 
+`
+
+const StyledResume = styled.div`
+    
+    text-align: center;
+
+    font-size: 20px;
+
+    @keyframes bounce {
+        0%, 12%, 75%, 100% {
+          -webkit-transform: translateY(0);
+          transform: translateX(0);
+        }
+      
+        25% {
+          -webkit-transform: translateY(-20px);
+          transform: translateX(-20px);
+        }
+      
+        50% {
+          -webkit-transform: translateY(-10px);
+          transform: translateX(20px);
+        }
+      }
+
+
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
+
+    p {
+        padding: 1%;
+        border: 2px solid var(--accent);
+        color: var(--accent);
+    }
+
+    div:hover {
+        animation: bounce 1s;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--accent);
+    }
+
+    
 
 `
 
@@ -155,36 +207,46 @@ const WorkitemNoPoints = ({ name, daterange, role, link }) => {
     )
 }
 
+
 export default class Experience extends Component {
 
     render() {
         return (
             <StyledDiv>
-                <div id="title">
-                    <p>Experience</p>
-                </div>
-                <div id="list">
-                    <WorkitemNoPoints
-                        name = "Steelcase"
-                        link = "https://steelcase.com"
-                        role = "Web Development and Innovation Intern"
-                        daterange = "2022 - Present"
-                    />
-                    <Workitem
-                        name = "Michigan State University"
-                        link = "https://msu.edu"
-                        role = "Teaching Assistant - CSE 232"
-                        daterange = "2021"
-                        skills = {["C++", "Python", "Excel"]}
-                    />
-                    <Workitem
-                        name = "Steelcase"
-                        link = "https://steelcase.com"
-                        role = "Product Data Technology Intern"
-                        daterange = "2021"
-                        skills = {["Python", "ABAP", "SAP"]}
-                    />
-                </div>
+                
+
+                <section>
+                    <div id="title">
+                        <p>Experience</p>
+                    </div>
+                    <div id="list">
+                        <WorkitemNoPoints
+                            name = "Steelcase"
+                            link = "https://steelcase.com"
+                            role = "Web Development and Innovation Intern"
+                            daterange = "2022 - Present"
+                        />
+                        <Workitem
+                            name = "Michigan State University"
+                            link = "https://msu.edu"
+                            role = "Teaching Assistant - CSE 232"
+                            daterange = "2021"
+                            skills = {["C++", "Python", "Excel"]}
+                        />
+                        <Workitem
+                            name = "Steelcase"
+                            link = "https://steelcase.com"
+                            role = "Product Data Technology Intern"
+                            daterange = "2021"
+                            skills = {["Python", "ABAP", "SAP"]}
+                        />
+                    </div>
+                </section>
+                <StyledResume>
+                    <div>
+                        <p><a href="insert-link-to-resume" target="_blank">Full Resume</a></p>
+                    </div>
+                </StyledResume>
             </StyledDiv>
         )
 
