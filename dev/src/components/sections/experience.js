@@ -244,7 +244,7 @@ export default class Experience extends Component {
                 </section>
                 <StyledResume>
                     <div>
-                        <p><a href="insert-link-to-resume" target="_blank">Full Resume</a></p>
+                        <p><a href="https://github.com/prathikmurthy/prathikm.dev/blob/main/dev/src/resources/Resume.pdf" target="_blank">Full Resume</a></p>
                     </div>
                 </StyledResume>
             </StyledDiv>
