@@ -18,6 +18,7 @@ const StyledDiv = styled.div`
         p {
             font-size: 20px;
             color: var(--accentblue);
+            font-weight: bold;
         }
     }
 
@@ -27,9 +28,11 @@ const StyledDiv = styled.div`
     }
 
     @media (max-width: 768px) {
-        padding-left: 10%;
         #title {
             padding-right: 10%;
+        }
+        section {
+            padding-right: 25%;
         }
     }
     
