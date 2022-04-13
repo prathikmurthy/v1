@@ -9,7 +9,7 @@ const StyledDiv = styled.div`
         font-size: 30px;
         text-align: center;
         font-weight: bold;
-        color: var(--accentblue);
+        color: var(--accentblue );
     }
 `
 
@@ -133,8 +133,7 @@ const GithubButton = ({link}) => {
     )
 }
 
-const Project = ({image, title, tag, link}) => {
-    const skills = ['Spotify API', 'Last.fm API', 'Python']
+const Project = ({image, title, tag, link, skills}) => {
     return (
         <StyledProject>
             <div id="project">
@@ -153,6 +152,8 @@ const Project = ({image, title, tag, link}) => {
 }
 export default class Featured extends Component {
     render() {
+        const skills1 = ['Spotify API', 'Last.fm API', 'Python'];
+        const skills2 = ['React', 'Express.js', 'MongoDB'];
         return (
             <StyledDiv>
                 <div id="header">Projects</div>
@@ -160,7 +161,14 @@ export default class Featured extends Component {
                  image = 'https://picsum.photos/900/500'
                  title = "Spotify-Last.fm Playlist Generator"
                  tag = "Automatic Spotify playlist builder using Last.fm Liked Songs" 
-                 link = "https://github.com/prathikmurthy/Spotify-last.fm-Playlist-Builder"/>
+                 link = "https://github.com/prathikmurthy/Spotify-last.fm-Playlist-Builder"
+                 skills = {skills1}/>
+                 <Project 
+                 image = 'https://picsum.photos/900/500'
+                 title = "Happyr"
+                 tag = "Uplifting SMS Service Created for Spartahack VII" 
+                 link = "https://github.com/Prodxgy/Happyr"
+                 skills = {skills2}/>
             </StyledDiv>
         )
     }
